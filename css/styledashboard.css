@@ -1,0 +1,20 @@
+div.tabla{
+	text-align: center;
+}
+
+div.tabla table {
+	margin: 0 auto;
+	text-align: left;
+}
+td{
+	text-align: center;
+}
+.estilo_letra {
+	text-decoration: none;
+	color:#7A3D60;
+	font-size: 30px; 
+}
+.estilo_imagenes{
+	width: 100px; height: 100px;
+}
+

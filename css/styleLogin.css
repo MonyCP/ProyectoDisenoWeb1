@@ -1,0 +1,48 @@
+ h1{
+  text-align: center;
+ }
+ .myButton {
+    background-color:#7A3D60;
+    border-radius:6px;
+    border:1px solid #7A3D60;
+    display:inline-block;
+    cursor:pointer;
+    color:#FBDDEE;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+  }
+  .myButton:hover {
+    background-color:#7A3D60;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
+  #login {
+    position: absolute;
+    top: 58%; /* Buscamos el centro horizontal (relativo) del navegador */
+    left: 58%; /* Buscamos el centro vertical (relativo) del navegador */
+    width: 300px; /* Definimos el ancho del objeto a centrar */
+    height: 200px; /* Definimos el alto del objeto a centrar */
+    margin-top: -200px; /* Restamos la mitad de la altura del objeto con un margin-top */
+    margin-left: -300px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    border-style: solid;
+    border-width: medium;
+    border-top-width: 50px;
+    border-color: #C43686;
+    text-align: center;
+    background-color: #FBDDEE;
+  }
+  #legend{
+    background-color: #C43686;
+    color: #FFFFFF;
+    background-size: medium;
+    border-style: solid;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-color: #C43686;
+    font-size: x-large;
+  }
