@@ -3,6 +3,17 @@
     margin:0px;
     padding:0px; 
   }
+  .contenedorB{
+    height: 100px;
+    margin-top: 50px;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 30px;
+  }
+  .contenedorB h1{
+    font-size: 200%;
+    margin: auto;
+  }
   div.encabezado{
     background-color: blue;
     margin: 0px;

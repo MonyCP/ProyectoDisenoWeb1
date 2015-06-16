@@ -1,20 +1,18 @@
-div.tabla{
-	text-align: center;
+.bloque-imagenes{
+	background-color: orange;
+	width: 600px;
+	height: 100px;
 }
-
-div.tabla table {
-	margin: 0 auto;
-	text-align: left;
+.contenedorimagenes{
+	display: inline-block;
+	background-color: green;
+	width: 200px;
+	height: 100px;
 }
-td{
-	text-align: center;
+.imagen{
+	background-color: blue;
 }
-.estilo_letra {
-	text-decoration: none;
-	color:#7A3D60;
-	font-size: 30px; 
-}
-.estilo_imagenes{
-	width: 100px; height: 100px;
+.letras{
+	background-color: purple;
 }
 
