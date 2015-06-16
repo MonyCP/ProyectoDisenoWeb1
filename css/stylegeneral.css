@@ -3,6 +3,9 @@
     margin:0px;
     padding:0px; 
   }
+  header{
+    max-height: 100px;
+  }
   .encabezado{
     background-color: #C4C4C4;
     font-size: x-small;
@@ -17,6 +20,9 @@
   .menu{
     height: 50px; /*ancho del cuadro*/
     background-color:  #C43686;  
+    display: none;
+    margin-top: 50px;
+    float: botton;
         } 
   .menu ul {
     list-style: none;

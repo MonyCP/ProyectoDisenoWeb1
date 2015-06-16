@@ -3,8 +3,8 @@
 <head>
 	<title>clientes</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="styletablas.css">
-	<link rel="stylesheet" type="text/css" href="stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/styletable">
 	<link  rel = "stylesheet"  href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
 </head>
 <body>
@@ -12,18 +12,22 @@
 		<div class="encabezado">
 			<h1>Dashboard</h1>
 		</div>
-		<div class="menu">
-			<ul>
-				<li><a href="#" class="active">Clientes</a></li>
-				<li><a href="">Servicio</a></li>
-				<li><a href="">Invoices</a></li>
-				<li><a href=""></a>Usuario<img src="images/icono-usuario.png"></li>
-			</ul>
+		<div>
+			<nav class="menu">
+				<ul>
+					<li><a href="#">Clients</a></li>
+					<li><a href="">Servicio</a></li>
+					<li><a href="">Invoices</a></li>
+				</ul>
+			</nav>
+			<div>
+				<i class="fa fa-user"></i><label>Usuario</label>
+			</div>
 		</div>
 	</header>
 	<div>
-		<div><img src="images/clientes.ico"></div><div><label>Usuario</label></div>
-		<button>NEW CLIENTS</button>
+		<div class="lugar"><i class="fa fa-users"></i><label>Clientes</label></div>
+		<div class="button"><button>New Client</button> </div>
 	</div>
 	<div>
 		<table>
@@ -42,3 +46,4 @@
 	</div>
 </body>
 </html>
+<!--http://localhost/xampp/index.php>
