@@ -1,17 +1,6 @@
  h1{
   text-align: center;
  }
-.contenedorB{
-    height: 100px;
-    margin-top: 50px;
-    padding-left: 40%;
-    padding-right: 40%;
-    padding-top: 30px;
-  }
-.contenedorB h1{
-    font-size: 200%;
-    margin: auto;
-  }
  .myButton {
     background-color:#7A3D60;
     border-radius:6px;

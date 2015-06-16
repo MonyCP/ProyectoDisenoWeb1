@@ -1,18 +1,32 @@
 .bloque-imagenes{
-	background-color: orange;
 	width: 600px;
-	height: 100px;
+	height: 400px;
+	margin-left: 20%;
 }
 .contenedorimagenes{
 	display: inline-block;
-	background-color: green;
+    float: left;
+	margin: 0px;
 	width: 200px;
-	height: 100px;
+	height: 200px;
 }
 .imagen{
-	background-color: blue;
+	display: inline-block;
+	margin: 0px;
+	float: left;
+	width: 200px;
+	height: 125px;
+	text-align: center;
+	font-size: 100px;
 }
 .letras{
-	background-color: purple;
+	display: inline-block;
+	float:right;
+	width: 195px;
+	height: 30px;
+	text-align: center;
 }
+/*
+		<div class"contenedorimagenes"></a></div></div>
+		<div class"contenedorimagenes"></div>*/
 
