@@ -3,56 +3,53 @@
     margin:0px;
     padding:0px; 
   }
-  header{
-    max-height: 100px;
-  }
-  .encabezado{
-    background-color: #C4C4C4;
-    font-size: x-small;
-    color: black;
-    border-style: solid;
-    border-color:  #C4C4C4;
-  }
-  .title {
-    color: #41142E;
+  div.encabezado{
+    background-color: blue;
+    margin: 0px;
+    height: 30px;
     text-align: center;
+    padding: 50% auto 50% auto;
   }
-  .menu{
-    height: 50px; /*ancho del cuadro*/
-    background-color:  #C43686;  
-    display: none;
-    margin-top: 50px;
-    float: botton;
-        } 
-  .menu ul {
-    list-style: none;
-    margin: auto;
-    padding: 0px;
-    height: 20px;
-    font-size: 21px; 
-  }
-  .menu ul li {
+  h1{
     display: inline-block;
-    width: 20%;
+    margin: 0px;
+    font-size: 100%;
+    color: green;
+    height: 20px;
+    padding-top: 5px;
   }
-
+  div.contenedor{
+    background-color: red;
+    height: 57px;
+  }
+  nav.menu{
+    background-color: yellow;
+    display: inline-block;
+    float: left;
+  }
+  div#usuario{
+    background-color: purple;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    font-size: 125%;
+    margin-right: 15px;
+  }
+  #usuario i{
+    font-size: 200%;
+  }
+  .menu ul li{
+    display: inline;
+  }
   .menu ul li a{
+    margin: 35px;
+    font-size: 125%;
     text-decoration: none;
-    color: #FBDDEE;
-    line-height: 50px; /*centrar en el cuadro*/
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  .menu ul li a:hover{
-    background-color: #FBDDEE;
-    color: #C43686;
+    border-style: groove;
+    padding: 5px 10px 5px 10px; 
   }
   a.active{ /*marcar en que html está en el menu */
     background-color: #FBDDEE;
-    color: #4C0B5F;
-  }
-  #usuario{
-   margin-left: 100%;
-  }
+    color: #4C0B5F;}
+
 
