@@ -1,14 +1,17 @@
 .bloque-imagenes{
 	width: 600px;
 	height: 400px;
-	margin-left: 20%;
+	margin-left: 30%;
 }
 .contenedorimagenes{
-	display: inline-block;
     float: left;
 	margin: 0px;
 	width: 200px;
 	height: 200px;
+	text-align: center;
+}
+.contenedorimagenes h2{
+	font-size: 15%;
 }
 .imagen{
 	display: inline-block;
@@ -19,14 +22,4 @@
 	text-align: center;
 	font-size: 100px;
 }
-.letras{
-	display: inline-block;
-	float:right;
-	width: 195px;
-	height: 30px;
-	text-align: center;
-}
-/*
-		<div class"contenedorimagenes"></a></div></div>
-		<div class"contenedorimagenes"></div>*/
 

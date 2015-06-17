@@ -1,0 +1,74 @@
+.titulotabla{
+	height: 100px;
+	float: none;
+	margin-top: 50px;
+}
+.lugar{
+	margin-left: 15%;
+	display: inline-block;
+	height: 40px;
+	float: left;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.lugar label{
+	font-size: 200%;
+}
+.lugar i {
+	font-size: 250%;
+}
+.button{
+	margin-right: 15%;
+	display: inline-block;
+	float: right;
+	padding-top: 31px;
+	height: 70px;
+}
+.button button{
+	font-size: 25px;
+	border-style: solid;
+	border-color: blue;
+}
+.contenedortabla{
+	background-color: yellow;
+	padding-left: 30%;
+}
+.tabla {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-align: right;
+	width: 600px;
+	border-style: none;
+}
+.tabla th{
+padding: 5px;
+font-size: 16px;
+background-color: #83aec0;
+background-image: url(fondo_th.png);
+background-repeat: repeat-x;
+color: #FFFFFF;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-right-style: solid;
+border-bottom-style: solid;
+border-right-color: #558FA6;
+border-bottom-color: #558FA6;
+font-family: “Trebuchet MS”, Arial;
+text-transform: uppercase;
+}
+.tabla td {
+padding: 5px;
+font-size: 16px;
+background-color: #e2ebef;
+background-image: url(fondo_tr01.png);
+background-repeat: repeat-x;
+color: #34484E;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-right-style: solid;
+border-bottom-style: solid;
+border-right-color: #558FA6;
+border-bottom-color: #558FA6;
+font-family: “Trebuchet MS”, Arial;
+text-transform: uppercase;
+}

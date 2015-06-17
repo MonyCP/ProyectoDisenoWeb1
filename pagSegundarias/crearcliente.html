@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<title>edit client</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/styletablas.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleformulario.css">
+	<link  rel = "stylesheet"  href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
+</head>
+<body>
+	<header>
+		<div class="encabezado">
+			<h1>Dashboard</h1>
+		</div>
+		<div class="contenedor">
+			<nav class="menu">
+				<ul>
+					<li><a href="clientes.html">Clients</a></li>
+					<li><a href="">Servicio</a></li>
+					<li><a href="">Invoices</a></li>
+				</ul>
+			</nav>
+			<div id="usuario">
+				<label>Usuario  </label><i class="fa fa-user"></i>
+			</div>
+		</div>
+
+	</header>
+	<div class="titulotabla">
+		<div class="lugar"><i class="fa fa-users"></i><label>Clientes</label></div>
+		<div class="button"><button>New Client</button> </div>
+	</div>
+	<form action="clienteNuevo.html">
+		ID<br>
+		<input class="inputF" type="text" name="id" placeholder="ID" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<br>
+		<br>
+		Full Name:<br>
+		<input class="inputF" type="text" name="name" placeholder="Full Name" >
+		<br>
+		<br>
+		Phone Number<br>
+		<input class="inputF" type="text" name="tel" placeholder="Phone Number"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<br>
+		<br>
+			<a href="clientes.html">Cancel</a> 
+		 	<button>Save</button>
+	</form>
+</body>
+</html>

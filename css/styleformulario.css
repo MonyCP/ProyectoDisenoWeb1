@@ -1,0 +1,15 @@
+form {
+	display: inline-block;
+	margin-left: 30%;
+	margin-top: 5%;
+	font-size: 150%;
+	width: 40%;
+}
+form button{
+	color: red;
+	float: right;
+}
+.inputF{
+	height: 20px;
+	width: 100%;
+}
