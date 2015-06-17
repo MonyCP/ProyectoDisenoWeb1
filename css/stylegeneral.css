@@ -1,5 +1,4 @@
  body{ 
-    background-color: #E1E1DD; 
     margin:0px;
     padding:0px; 
   }
@@ -16,38 +15,47 @@
     margin: auto;
   }
   div.encabezado{
-    background-color: blue;
+    background-color: #FAF2FC;
     margin: 0px;
     height: 30px;
-    text-align: center;
     padding: 50% auto 50% auto;
   }
   h1{
     display: inline-block;
     margin: 0px;
     font-size: 100%;
-    color: green;
+    color: #520CB5;
     height: 20px;
     padding-top: 5px;
   }
   div.contenedor{
-    background-color: red;
+    background-color: #956DCD;
     height: 57px;
   }
   nav.menu{
-    background-color: yellow;
     display: inline-block;
     float: left;
   }
   div#usuario{
-    background-color: purple;
     display: inline-block;
     float: right;
     margin-top: 10px;
     font-size: 125%;
     margin-right: 15px;
+    color: #2C0A5C;
   }
   #usuario i{
+    font-size: 200%;
+  }
+  div #Home{
+    display: inline-block;
+    float: left;
+    margin-top: 10px;
+    font-size: 125%;
+    margin-right: 15px;
+    color: #2C0A5C;
+  }
+  #Home i{
     font-size: 200%;
   }
   .menu ul li{

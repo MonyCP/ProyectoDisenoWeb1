@@ -13,9 +13,11 @@
 }
 .lugar label{
 	font-size: 200%;
+	color: #A80461;
 }
 .lugar i {
 	font-size: 250%;
+	color: #A80461;
 }
 .button{
 	margin-right: 15%;
@@ -30,7 +32,6 @@
 	border-color: blue;
 }
 .contenedortabla{
-	background-color: yellow;
 	padding-left: 30%;
 }
 .tabla {
@@ -43,32 +44,19 @@
 .tabla th{
 padding: 5px;
 font-size: 16px;
-background-color: #83aec0;
-background-image: url(fondo_th.png);
-background-repeat: repeat-x;
+background-color: #41142E;
 color: #FFFFFF;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-right-style: solid;
-border-bottom-style: solid;
-border-right-color: #558FA6;
-border-bottom-color: #558FA6;
+border-style: solid;
+border-color: #FBDDEE;
+border-width: 1px;
 font-family: “Trebuchet MS”, Arial;
 text-transform: uppercase;
 }
 .tabla td {
 padding: 5px;
 font-size: 16px;
-background-color: #e2ebef;
-background-image: url(fondo_tr01.png);
-background-repeat: repeat-x;
-color: #34484E;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-right-style: solid;
-border-bottom-style: solid;
-border-right-color: #558FA6;
-border-bottom-color: #558FA6;
+background-color: #FBDDEE;
+color: #7A3D60;
 font-family: “Trebuchet MS”, Arial;
 text-transform: uppercase;
 }
