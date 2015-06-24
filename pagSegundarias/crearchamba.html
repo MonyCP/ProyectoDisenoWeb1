@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+	<title>New Chamba</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/styletablas.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleformulario.css">
+	<link  rel = "stylesheet"  href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
+</head>
+<body>
+	<header>
+		<div class="encabezado">
+			<h1>Chamba</h1>
+		</div>
+		<div class="contenedor">
+			<div id="Home">
+				<a href="../dashboard.html"><i class="fa fa-home"></i></a><label>  Home</label>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="clientes.html">Clients</a></li>
+					<li><a href="chamba.html">Servicio</a></li>
+					<li><a href="factura.html">Invoices</a></li>
+				</ul>
+			</nav>
+			<div id="usuario">
+				<label>Usuario  </label><i class="fa fa-user"></i>
+			</div>
+		</div>
+
+	</header>
+	<div class="titulotabla">
+		<div class="lugar"><i class="fa fa-folder-open-o"></i><label>Chambas</label></div>
+		<div class="button"><button><a href="#">New Chamba</a></button></div>
+	</div>
+	<form action="chambaNuevo.html">
+		ID<br>
+		<select>
+			<option value="#">Cliente</option>
+			<option value="Felipe Mora">Felipe Mora</option>
+			<option value="Alejandro Portuguez">Alejandro Portuguez</option>
+			<option value="Juanito Alcachofa">Juanito Alcachofa</option>
+		</select>
+		<br>
+		<br>
+		Descripcion:<br>
+		<textarea rows="4" cols="50" placeholder="Descripcion del empleo"></textarea>
+		<br>
+		<br>
+		Fecha<br>
+		<input type="date" name="fecha">
+		<br>
+		<br>
+		Notas<br>
+		<input class="inputF" type="text" name="Notas" placeholder="Notas">
+		<br>
+		<br>
+		<a href="chambas.html">Cancel</a> 
+		<button>Save</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+	<title>New Invoices</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/styletablas.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleformulario.css">
+	<link  rel = "stylesheet"  href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
+</head>
+<body>
+	<header>
+		<div class="encabezado">
+			<h1>Invoices</h1>
+		</div>
+		<div class="contenedor">
+			<div id="Home">
+				<a href="../dashboard.html"><i class="fa fa-home"></i></a><label>  Home</label>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="clientes.html">Clients</a></li>
+					<li><a href="chamba.html">Servicio</a></li>
+					<li><a href="factura.html">Invoices</a></li>
+				</ul>
+			</nav>
+			<div id="usuario">
+				<label>Usuario  </label><i class="fa fa-user"></i>
+			</div>
+		</div>
+
+	</header>
+	<div class="titulotabla">
+		<div class="lugar"><i class="fa fa-pencil-square-o"></i><label>Invoices</label></div>
+		<div class="button"><button><a href="crearfacturas.html">New Invoices</a></button></div>
+	</div>
+	</div>
+	<form action="facturasNuevo.html">
+		ID<br>
+		<select>
+			<option value="#">Cliente</option>
+			<option value="Felipe Mora">Felipe Mora</option>
+			<option value="Alejandro Portuguez">Alejandro Portuguez</option>
+			<option value="Juanito Alcachofa">Juanito Alcachofa</option>
+		</select>
+		<br>
+		<br>
+		Descripcion:<br>
+		<textarea rows="4" cols="50" placeholder="Descripcion del empleo"></textarea>
+		<br>
+		<br>
+		Fecha<br>
+		<input type="date" name="fecha">
+		<br>
+		<br>
+		Monto<br>
+		<input class="inputF" type="text" name="Notas" placeholder="Monto del pago" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<br>
+		<br>
+		<a href="facturas.html">Cancel</a> 
+		<button>Save</button>
+	</form>
+</body>
+</html>
