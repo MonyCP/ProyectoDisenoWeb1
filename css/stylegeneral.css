@@ -1,6 +1,7 @@
  body{ 
     margin:0px;
     padding:0px; 
+    background-color: #FFF0E4;
   }
   .contenedorB{
     height: 100px;
@@ -29,31 +30,33 @@
     padding-top: 5px;
   }
   div.contenedor{
-    background-color: #956DCD;
+    background-color: #FF9A00;
     height: 57px;
   }
   nav.menu{
     display: inline-block;
     float: left;
   }
-  div#usuario{
+  div #usuario a{
     display: inline-block;
     float: right;
     margin-top: 10px;
     font-size: 125%;
     margin-right: 15px;
-    color: #2C0A5C;
+    color: #442F20;
+    text-decoration: none;
   }
   #usuario i{
     font-size: 200%;
   }
-  div #Home{
+  div #Home a{
     display: inline-block;
     float: left;
     margin-top: 10px;
     font-size: 125%;
     margin-right: 15px;
-    color: #2C0A5C;
+    color: #442F20;
+    text-decoration: none;
   }
   #Home i{
     font-size: 200%;
@@ -65,11 +68,11 @@
     margin: 35px;
     font-size: 125%;
     text-decoration: none;
-    border-style: groove;
     padding: 5px 10px 5px 10px; 
+    color: #A34500;
   }
-  a.active{ /*marcar en que html está en el menu */
-    background-color: #FBDDEE;
-    color: #4C0B5F;}
+  .menu ul li a:hover{
+    color: #442F20;
+  }
 
 

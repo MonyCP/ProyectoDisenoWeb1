@@ -13,11 +13,11 @@
 }
 .lugar label{
 	font-size: 200%;
-	color: #A80461;
+	color: #442F20;
 }
 .lugar i {
 	font-size: 250%;
-	color: #A80461;
+	color: #442F20;
 }
 .button{
 	margin-right: 15%;
@@ -25,14 +25,24 @@
 	float: right;
 	padding-top: 31px;
 	height: 70px;
+	text-decoration: none;
+	color: #A80461;
 }
 .button button{
 	font-size: 25px;
 	border-style: solid;
-	border-color: blue;
+	border-color: #442F20;
+	border-radius:6px;
+	cursor:pointer;
+	background-color: #FFE7C1;
 }
+.button button a{
+	text-decoration: none;
+	color: #442F20;
+}
+
 .contenedortabla{
-	padding-left: 30%;
+	padding-left: 17%;
 }
 .tabla {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -40,14 +50,16 @@
 	text-align: right;
 	width: 600px;
 	border-style: none;
+	width: 80%; /*Aquí va el ancho de la Celda*/
+	height: 40%; /*Aquí el Alto*/
 }
 .tabla th{
 padding: 5px;
 font-size: 16px;
-background-color: #41142E;
-color: #FFFFFF;
+background-color: #442F20;
+color: #FF9A00;
 border-style: solid;
-border-color: #FBDDEE;
+border-color: #FFDBC1;
 border-width: 1px;
 font-family: “Trebuchet MS”, Arial;
 text-transform: uppercase;
@@ -55,8 +67,11 @@ text-transform: uppercase;
 .tabla td {
 padding: 5px;
 font-size: 16px;
-background-color: #FBDDEE;
-color: #7A3D60;
+background-color: #FFDBC1;
+color: #442F20;
 font-family: “Trebuchet MS”, Arial;
 text-transform: uppercase;
+}
+.tabla td a{
+color: #442F20;
 }

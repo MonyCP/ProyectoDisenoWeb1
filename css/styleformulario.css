@@ -1,15 +1,52 @@
 form {
 	display: inline-block;
 	margin-left: 30%;
-	margin-top: 5%;
+	margin-top: 2%;
 	font-size: 150%;
 	width: 40%;
+	color: #442F20;
 }
 form button{
-	color: red;
+	color: #442F20;
+	font-family:Trebuchet MS;
+	font-size:20px;
 	float: right;
+	border-color: #442F20;
+	border-radius:14px;
+	padding:16px 45px;
+	background-color:#ffec64;
+	cursor:pointer;
+	font-weight:bold;
+	padding:10px 40px;
 }
 .inputF{
 	height: 20px;
 	width: 100%;
+}
+form a{
+	text-decoration: none;
+	color: #442F20;
+}
+/*.myButton {
+	background-color:#ffec64;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;
+	border:2px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	font-weight:bold;
+	padding:16px 45px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffee66;
+}
+.myButton:hover {
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
