@@ -75,3 +75,24 @@ text-transform: uppercase;
 .tabla td a{
 color: #442F20;
 }
+.eliminar{
+	margin-left: 15%;
+	font-size: 120%;
+}
+#Yes{
+	display: inline-block;
+	margin-left: 10%;
+	color: #D2D4CE;
+	background-color: #128700;
+	border-style: solid;
+	border-color: #1E381A;
+	padding:0.1% 1% 0.1% 1%;
+}
+#No{
+	display: inline-block;
+	color: #D2D4CE;
+	background-color: #FF1300;
+	border-style: solid;
+	border-color: #A30C00;
+	padding:0.1% 1% 0.1% 1%;
+}
