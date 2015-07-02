@@ -1,9 +1,26 @@
-body{
-   background: url(../images/login1.jpg);
+body {
+    background: url(../images/login.jpg) no-repeat fixed center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
  h1{
   text-align: center;
  }
+   .contenedorB{
+    height: 100px;
+    margin-top: 50px;
+    margin-left: 50px;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 30px;
+    background-color: transparent;
+  }
+  .contenedorB h1{
+    font-size: 200%;
+    margin: auto;
+  }
  .myButton {
     background-color:#A34500;
     border-radius:6px;
