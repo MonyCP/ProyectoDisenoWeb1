@@ -7,19 +7,6 @@
  h1{
   text-align: center;
  }
-   .contenedorB{
-    height: 100px;
-    margin-top: 50px;
-    margin-left: 50px;
-    padding-left: 40%;
-    padding-right: 40%;
-    padding-top: 30px;
-    background-color: transparent;
-  }
-  .contenedorB h1{
-    font-size: 200%;
-    margin: auto;
-  }
  .myButton {
     background-color:#A34500;
     border-radius:6px;
@@ -28,7 +15,7 @@
     cursor:pointer;
     color:#FBDDEE;
     font-family:Arial;
-    font-size:15px;
+    font-size:19px;
     font-weight:bold;
     padding:6px 24px;
     text-decoration:none;
@@ -43,12 +30,12 @@
   }
   #login {
     position: absolute;
-    top: 58%; /* Buscamos el centro horizontal (relativo) del navegador */
-    left: 58%; /* Buscamos el centro vertical (relativo) del navegador */
-    width: 300px; /* Definimos el ancho del objeto a centrar */
-    height: 200px; /* Definimos el alto del objeto a centrar */
-    margin-top: -200px; /* Restamos la mitad de la altura del objeto con un margin-top */
-    margin-left: -300px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    top: 20%; /* Buscamos el centro horizontal (relativo) del navegador */
+    left: 30%; /* Buscamos el centro vertical (relativo) del navegador */
+    width: 30%; /* Definimos el ancho del objeto a centrar */
+    height: 40%; /* Definimos el alto del objeto a centrar */
+    margin-top: 5%; /* Restamos la mitad de la altura del objeto con un margin-top */
+    margin-right: 2%;
     border-style: solid;
     border-width: medium;
     border-top-width: 50px;
@@ -67,3 +54,39 @@
     border-color: #A34500;
     font-size: x-large;
   }
+  /*iPhone 5 (320x568)*/
+  @media( min-width: 320px){
+    .contenedorB{
+      margin-top: 10%;
+      }
+    .contenedorB h1{
+      margin: auto;
+      margin-left:2%;
+      font-size: 150%;
+      }
+    #legend{
+      border-top-width: 6px;
+      border-bottom-width: 6px;
+    }
+    #login{
+      height: 50%;
+      left: 15%;
+    }
+}
+  /*Apple iPad (1024x768)*/
+   @media(min-width:1024px){
+      .contenedorB h1{
+      font-size: 250%;
+      margin-left: 30%;
+     }
+
+     #login{
+      height: 45%;
+      left: 35%;
+    }
+    .myButton {
+      font-size: 15px;
+    }
+
+    }
+  
