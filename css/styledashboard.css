@@ -1,10 +1,10 @@
 .bloque-imagenes{
 	width: 600px;
 	height: 400px;
-	margin-left: 30%;
+	margin-left: 35%;
 }
 .contenedorimagenes{
-    float: left;
+	float: left;
 	margin: 0px;
 	width: 200px;
 	height: 200px;
@@ -24,4 +24,43 @@
 }
 .imagen a{
 	color: #442F20;
+}
+
+/*iPhone 5 (320x568)*/
+@media(min-width: 320px){
+	.contenedorimagenes{
+		margin-left: 20%;
+		margin-top: 20%;
+	}
+	.contenedorimagenes .imagen a i{
+		font-size: 250%;
+	}
+	.bloque-imagenes{
+		height: 700px;
+		margin-left: 25%;
+	}
+}
+/*Apple iPad (1024x768)*/
+@media(min-width:1024px){
+
+	.contenedorimagenes{
+		margin-left: 0%;
+		margin-top: 0%;
+		height: 100px;
+	}
+	.contenedorimagenes .imagen a i{
+		font-size: 100%;
+	}
+	.bloque-imagenes{
+		height: 150px;
+		margin-left: 25%;
+		margin-top: 10%;
+	}
+}
+/*Desktop*/
+@media(min-width:1336px){
+	.bloque-imagenes{
+		margin-left: 30%;
+		margin-top: 5%;
+	}
 }

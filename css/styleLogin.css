@@ -1,92 +1,108 @@
 #bg{
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:-1;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
 }
- h1{
+h1{
   text-align: center;
- }
- .myButton {
-    background-color:#A34500;
-    border-radius:6px;
-    border:1px solid #A34500;
-    display:inline-block;
-    cursor:pointer;
-    color:#FBDDEE;
-    font-family:Arial;
-    font-size:19px;
-    font-weight:bold;
-    padding:6px 24px;
-    text-decoration:none;
+}
+.myButton {
+  background-color:#A34500;
+  border-radius:6px;
+  border:1px solid #A34500;
+  display:inline-block;
+  cursor:pointer;
+  color:#FBDDEE;
+  font-family:Arial;
+  font-size:19px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+}
+.myButton:hover {
+  background-color:#FBDDEE;
+  color:#A34500;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+#login {
+  position: absolute;
+  top: 20%; /* Buscamos el centro horizontal (relativo) del navegador */
+  left: 30%; /* Buscamos el centro vertical (relativo) del navegador */
+  width: 30%; /* Definimos el ancho del objeto a centrar */
+  height: 40%; /* Definimos el alto del objeto a centrar */
+  margin-top: 5%; /* Restamos la mitad de la altura del objeto con un margin-top */
+  margin-right: 2%;
+  border-style: solid;
+  border-width: medium;
+  border-top-width: 50px;
+  border-color: #A34500;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #F5A76D;
+}
+#legend{
+  background-color: #A34500;
+  color: #FFFFFF;
+  background-size: medium;
+  border-style: solid;
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-color: #A34500;
+  font-size: x-large;
+}
+/*iPhone 5 (320x568)*/
+@media( min-width: 320px){
+  .contenedorB{
+    margin-top: 10%;
   }
-  .myButton:hover {
-    background-color:#FBDDEE;
-    color:#A34500;
-  }
-  .myButton:active {
-    position:relative;
-    top:1px;
-  }
-  #login {
-    position: absolute;
-    top: 20%; /* Buscamos el centro horizontal (relativo) del navegador */
-    left: 30%; /* Buscamos el centro vertical (relativo) del navegador */
-    width: 30%; /* Definimos el ancho del objeto a centrar */
-    height: 40%; /* Definimos el alto del objeto a centrar */
-    margin-top: 5%; /* Restamos la mitad de la altura del objeto con un margin-top */
-    margin-right: 2%;
-    border-style: solid;
-    border-width: medium;
-    border-top-width: 50px;
-    border-color: #A34500;
-    border-radius: 20px;
-    text-align: center;
-    background-color: #F5A76D;
+  .contenedorB h1{
+    margin: auto;
+    margin-left:2%;
+    font-size: 200%;
   }
   #legend{
-    background-color: #A34500;
-    color: #FFFFFF;
-    background-size: medium;
-    border-style: solid;
-    border-top-width: 10px;
-    border-bottom-width: 10px;
-    border-color: #A34500;
-    font-size: x-large;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
   }
-  /*iPhone 5 (320x568)*/
-  @media( min-width: 320px){
-    .contenedorB{
-      margin-top: 10%;
-      }
-    .contenedorB h1{
-      margin: auto;
-      margin-left:2%;
-      font-size: 150%;
-      }
-    #legend{
-      border-top-width: 6px;
-      border-bottom-width: 6px;
-    }
-    #login{
-      height: 50%;
-      left: 15%;
-    }
+  #login{
+    height: 50%;
+    left: 15%;
+  }
 }
-  /*Apple iPad (1024x768)*/
-   @media(min-width:1024px){
-      .contenedorB h1{
-      font-size: 250%;
-      margin-left: 30%;
-     }
+/*Apple iPad (1024x768)*/
+@media(min-width:1024px){
+  .contenedorB h1{
+    font-size: 250%;
+    margin-left: 30%;
+  }
 
-     #login{
-      height: 45%;
-      left: 35%;
-    }
-    .myButton {
-      font-size: 15px;
-    }
+  #login{
+    height: 45%;
+    left: 35%;
+  }
+  .myButton {
+    font-size: 15px;
+  }
 
-    }
-  
+}
+
+@media(min-width:1336px){
+  .contenedorB h1{
+    font-size: 255%;
+    margin-left: 35%;
+  }
+
+  #login{
+    height: 50%;
+    left: 35%;
+  }
+  .myButton {
+    font-size: 15px;
+  }
+
+}
+

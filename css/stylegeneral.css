@@ -1,67 +1,176 @@
  body{ 
-    margin:0px;
-    padding:0px; 
-    background-color: #FFF0E4;
-  }
+  margin:0px;
+  padding:0px; 
+  background-color: #FFF0E4;
+}
+div.encabezado{
+  background-color: #FAF2FC;
+  margin: 0px;
+  height: 30px;
+  padding: 50% auto 50% auto;
+}
+h1{
+  display: inline-block;
+  margin: 0px;
+  font-size: 150%;
+  color: #FF9A00;
+  height: 20px;
+  padding-top: 5px;
+  text-align: center;
+}
+div.contenedor{
+  background-color: #FF9A00;
+  height: 57px;
+}
+nav.menu{
+  display: inline-block;
+  float: left;
+}
+div #usuario a{
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+  font-size: 125%;
+  margin-right: 15px;
+  color: #442F20;
+  text-decoration: none;
+}
+#usuario i{
+  font-size: 200%;
+}
+div #Home a{
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+  font-size: 125%;
+  margin-right: 15px;
+  color: #442F20;
+  text-decoration: none;
+}
+#Home i{
+  font-size: 200%;
+}
+.menu ul li{
+  display: inline;
+}
+.menu ul li a{
+  margin: 35px;
+  font-size: 125%;
+  text-decoration: none;
+  padding: 5px 10px 5px 10px; 
+  color: #A34500;
+}
+.menu ul li a:hover{
+  color: #442F20;
+}
+/*iPhone 5 (320x568)*/
+@media( min-width: 320px){
   div.encabezado{
-    background-color: #FAF2FC;
-    margin: 0px;
-    height: 30px;
-    padding: 50% auto 50% auto;
-  }
-  h1{
-    display: inline-block;
-    margin: 0px;
-    font-size: 200%;
-    color: #FF9A00;
-    height: 20px;
-    padding-top: 5px;
-    text-align: center;
+    height: 70px;
+}
+.encabezado h1{
+  font-size: 300%;
+  height: 10px;
+  padding-top: 10px;
+  margin-left: 15%;
+}
+h1{
+  font-size: 400%;
+}
+  nav .menu {
+    width: 200px;
+    margin: 10px;
   }
   div.contenedor{
     background-color: #FF9A00;
-    height: 57px;
-  }
-  nav.menu{
-    display: inline-block;
-    float: left;
+    height: 300px;
+    width: 100%;
   }
   div #usuario a{
-    display: inline-block;
-    float: right;
-    margin-top: 10px;
-    font-size: 125%;
-    margin-right: 15px;
-    color: #442F20;
-    text-decoration: none;
+    font-size: 800%;
   }
-  #usuario i{
+  #Home label{
+    display: none;
+    margin-left: 0px;
+  } 
+  #Home{
+    margin-right: 0px;
+    width: 300px;
+  }
+  #usuario label{
+    display: none;
+  } 
+  div #Home a{
+    font-size: 400%;
+  }
+  #Home i{
+    font-size: 400%;
+  }
+  .menu ul li a{
+    font-size: 450%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  nav.menu ul{
+    width: 300px;
+    margin-left: 18%;
+  }
+}
+/*Apple iPad (1024x768)*/
+@media(min-width:1024px){
+ div.encabezado{
+  height: 30px;
+}
+.encabezado h1{
+  font-size: 200%;
+  height: 10px;
+  padding-top: 10px;
+  margin-left: 5%;
+}
+h1{
+  font-size: 300%;
+  margin-left: 40%;
+}
+  nav .menu {
+    width: 300px;
+    margin: 0px;
+  display: inline-block;
+  float: left;
+  }
+  div.contenedor{
+    background-color: #FF9A00;
+    height: 100px;
+    width: 100%;
+    margin-top: 2%;
+  }
+  div #usuario a{
     font-size: 200%;
   }
+  #Home label{
+    display: inline;
+    margin-left: 0px;
+    font-size: 200%;
+  } 
+  #Home{
+    margin-right: 0px;
+    width: 300px;
+  }
+  #usuario label{
+    display: inline;
+  } 
   div #Home a{
-    display: inline-block;
-    float: left;
-    margin-top: 10px;
-    font-size: 125%;
-    margin-right: 15px;
-    color: #442F20;
-    text-decoration: none;
+    font-size: 200%;
   }
   #Home i{
     font-size: 200%;
   }
-  .menu ul li{
-    display: inline;
-  }
   .menu ul li a{
-    margin: 35px;
-    font-size: 125%;
-    text-decoration: none;
-    padding: 5px 10px 5px 10px; 
-    color: #A34500;
+  font-size: 200%;
   }
-  .menu ul li a:hover{
-    color: #442F20;
+  nav.menu ul{
+    width: auto;
+    margin-left: auto;
+    margin-top: 5%;
   }
-
+}
 
