@@ -28,7 +28,7 @@
 	text-decoration: none;
 	color: #A80461;
 }
-.button button{
+input, button{
 	font-size: 25px;
 	border-style: solid;
 	border-color: #442F20;
@@ -36,7 +36,7 @@
 	cursor:pointer;
 	background-color: #FFE7C1;
 }
-.button button a{
+button a{
 	text-decoration: none;
 	color: #442F20;
 }
@@ -54,26 +54,26 @@
 	height: 40%; /*Aquí el Alto*/
 }
 .tabla th{
-padding: 5px;
-font-size: 16px;
-background-color: #442F20;
-color: #FF9A00;
-border-style: solid;
-border-color: #FFDBC1;
-border-width: 1px;
-font-family: “Trebuchet MS”, Arial;
-text-transform: uppercase;
+	padding: 5px;
+	font-size: 16px;
+	background-color: #442F20;
+	color: #FF9A00;
+	border-style: solid;
+	border-color: #FFDBC1;
+	border-width: 1px;
+	font-family: “Trebuchet MS”, Arial;
+	text-transform: uppercase;
 }
 .tabla td {
-padding: 5px;
-font-size: 16px;
-background-color: #FFDBC1;
-color: #442F20;
-font-family: “Trebuchet MS”, Arial;
-text-transform: uppercase;
+	padding: 5px;
+	font-size: 16px;
+	background-color: #FFDBC1;
+	color: #442F20;
+	font-family: “Trebuchet MS”, Arial;
+	text-transform: uppercase;
 }
 .tabla td a{
-color: #442F20;
+	color: #442F20;
 }
 .eliminar{
 	margin-left: 15%;
@@ -95,4 +95,71 @@ color: #442F20;
 	border-style: solid;
 	border-color: #A30C00;
 	padding:0.1% 1% 0.1% 1%;
+}
+
+@media( min-width: 320px){
+	.contenedortabla{
+		display: none;
+	}
+	.contenedorselect{
+		margin-top: 15%;
+		margin-left: 15%; 
+		padding: 3%;
+	}
+	.contenedorselect input{
+		font-size: 345%;
+		margin-left: 48%;
+	}
+	.contenedorselect select{
+		font-size: 345%;
+		color: #FFE7C1;
+		background-color: #442F20;
+	}
+	.contenedorselect select option{
+		font-size: 30%;
+	}
+	.lugar label{
+		font-size: 350%;
+	}
+	.lugar i {
+		font-size: 350%;
+	}
+	.button{
+		height: 60px;
+	}
+	.button button{
+		font-size: 347%;
+	}
+	.titulotabla{
+	height: 70px;
+	float: none;
+	margin-top: 50px;
+	margin-bottom: 5%;
+    }
+    .titulotabla .lugar{
+    	height: 60px;
+    }
+}
+@media(min-width: 1024px){
+	.contenedortabla{
+		display: inline-block;
+	}
+	.contenedorselect{
+		display: none;
+	}
+	.lugar label{
+		font-size: 300%;
+	}
+	.lugar i {
+		font-size: 300%;
+	}
+	.button{
+		height: 60px;
+	}
+	.button button{
+		font-size: 250%;
+	}
+	.titulotabla{
+	margin-top: 0px;
+    }
 }

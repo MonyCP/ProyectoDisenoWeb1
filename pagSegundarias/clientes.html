@@ -9,44 +9,71 @@
 </head>
 <body>
 	<header>
-		<div class="encabezado">
-			<h1>Clients</h1>
-		</div>
-		<div class="contenedor">
-			<div id="Home">
-				<a href="../dashboard.html"><i class="fa fa-home"></i><label>  Home</label></a>
+		<div class="row">
+			<div class="four.columns encabezado">
+				<h1>Dashboard</h1>
 			</div>
-			<nav class="menu">
-				<ul>
-					<li><a href="#">Clients</a></li>
-					<li><a href="chamba.html">Chamba</a></li>
-					<li><a href="facturas.html">Invoices</a></li>
-				</ul>
-			</nav>
-			<div id="usuario">
-				<a href="../index.html"><label>User  </label><i class="fa fa-user"></i></a>
+		</div> 
+		<div class="row">
+			<div class="contenedor">
+				<div class="four.columns">
+					<div id="Home">
+						<a href=""><i class="fa fa-home"></i><label>  Home</label></a>
+					</div>
+				</div>
+				<div class="four.columns">
+					<nav class="menu">
+						<ul>
+							<li><a href="#">Clients</a></li>
+							<li><a href="chamba.html">Chamba</a></li>
+							<li><a href="facturas.html">Invoices</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="four.columns">
+					<div id="usuario">
+						<a href="index.html"><label id="user">User  </label><i class="fa fa-user"></i></a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
-
-	<div class="titulotabla">
-		<div class="lugar"><i class="fa fa-users"></i><label>New Client</label></div>
-		<div class="button"><a href="crearcliente.html"><button>New Client</button></a></div>
+	<div class="row">
+		<div class="four.columns">
+			<div class="titulotabla">
+				<div class="lugar"><i class="fa fa-users"></i><label>New Client</label></div>
+				<div class="button"><a href="crearcliente.html"><button>New Client</button></a></div>
+			</div>
+		</div>
 	</div>
-	<div class="contenedortabla">
-		<table border="0" cellpadding="0" cellspacing="0" class="tabla"
-		id="tblTablaClientes">
-			<thead>
-			<th>ID</th>
-			<th>Full Name</th>
-			<th>Phone Number</th>
-			<th>Action</th>
-			</thead>
-			<tbody>
-			</tbody>	
-		</table>
+	<div class="row">
+		<div class="contenedorselect">
+			<div class="four.columns">
+				<select>
+					<option>Clientes</option>
+				</select>
+				<input type=button value="Seleccionar"> 
+			</div>
+		</div>
 	</div>
-	<script src=".../JavaScript/JavaScript.js"></script>
+	<div class ="row">
+		<div class="eight.columns ">
+			<div class="contenedortabla">
+				<table border="0" cellpadding="0" cellspacing="0" class="tabla"
+				id="tblTablaClientes">
+				<thead>
+					<th>ID</th>
+					<th>Full Name</th>
+					<th>Phone Number</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+				</tbody>	
+			</table>
+		</div>
+	</div>
+</div>
+<script src=".../JavaScript/JavaScript.js"></script>
 </body>
 </html>
 <!--http://localhost/xampp/index.php>

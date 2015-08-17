@@ -27,3 +27,72 @@ form a{
 	text-decoration: none;
 	color: #442F20;
 }
+
+@media (min-width:  320px){
+	form{
+		margin-top: 10%;
+		margin-right: 10%;
+		font-size: 60px;
+	}
+	.inputF{
+		height: 50px;
+		width: 120%;
+		margin-bottom: 5%;
+	}
+
+	form button{
+		font-size:40px;
+	}
+	form select{
+		font-size: 40px;
+	}
+	form select option{
+		font-size: 10px;
+	}
+	form textarea {
+		font-size: 20px;
+	}
+	form input{
+		font-size: 10px;
+		width: 270px;
+		height: 30px;
+	}
+	
+}
+@media (min-width: 1024px){
+	form{
+		margin-left: 30%;
+		margin-top: 0%;
+		font-size: 150%;
+		width: 40%;
+
+	}
+	.inputF{
+		height: 20px;
+		width: 100%;
+		margin-bottom: 5%;
+	}
+
+	form button{
+		font-size:20px;
+	}
+}
+@media(min-width:1336px){
+	form{
+		margin-left: 30%;
+		margin-top: 0px;
+		font-size: 150%;
+		width: 40%;
+
+	}
+	.inputF{
+		height: 20px;
+		width: 100%;
+		margin-bottom: 0%;
+		font-size: 15px;
+	}
+
+	form button{
+		font-size:20px;
+	}
+}
