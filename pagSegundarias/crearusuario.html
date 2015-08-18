@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<title>Client</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
+	<link rel="stylesheet" type="text/css" href="../css/styletablas.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleformulario.css">
+	<script src="../JavaScript/jquery-1.11.3.min.js"></script>
+	<link  rel = "stylesheet"  href = "http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" >
+</head>
+<body>
+	<header>
+		<div class="encabezado">
+			<h1>User</h1>
+		</div>
+			<div class="contenedor">
+			<div id="Home">
+				<a href="../dashboard.html"><i class="fa fa-home"></i><label>  Home</label></a>
+			</div>
+			<nav class="menu">
+				<ul>
+					<li><a href="clientes.html">Clients</a></li>
+					<li><a href="chamba.html">Chamba</a></li>
+					<li><a href="facturas.html">Invoices</a></li>
+				</ul>
+			</nav>
+			<div id="usuario">
+				<a href="../index.html"><label>User  </label><i class="fa fa-user"></i></a>
+			</div>
+		</div>
+
+	</header>
+	<div class="titulotabla">
+		<div class="lugar"><i class="fa fa-users"></i><label>New User</label></div>
+		<div class="button"><a href="crearusuario.html"><button>New User</button></a></div>
+	</div>
+	<form>
+		Full Name:<br>
+		<input class="inputF" id="nameU" type="text" name="name" placeholder="Full Name" onKeypress="if (event.keyCode >45 && event.keyCode  <57) event.returnValue = false;">
+		<br>
+		<br>
+		User Number:<br>
+		<input class="inputF" id="user" type="text" name="tel" placeholder="User Number">
+		<br>
+		<br>
+		Password:<br>
+		<input class="inputF" id="password" type="password" name="password" placeholder="Password">
+		<br>
+		<br>
+		Repeat Password:<br>
+		<input class="inputF" id="passwordR" type="password" name="passwordR" placeholder="Password">
+		<br>
+		<br>
+			<a href="clientes.html">Cancel</a> 
+		 	<button onClick="Chambas.ObtenerDatosUsuraio()">Save</button>
+	</form>
+	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+</body>
+</html>
