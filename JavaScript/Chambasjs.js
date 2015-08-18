@@ -3,11 +3,11 @@ var clients= new Array();
 var Facturas= new Array();
 var Trabajos= new Array();
 var Chambas= Chambas ||{
-	User: function (name, user, password, acceso) {
-		this. name = name;
-		this.user = user;
-		this.password = password;
-		this.acceso = acceso;
+  User: function (name, user, password, acceso) {
+    this. name = name;
+    this.user = user;
+    this.password = password;
+    this.acceso = acceso;
   },
   Client: function(name,id, phone ){
     this.name = name;
@@ -45,11 +45,13 @@ ObtenerDatosUsuraio: function(){
   var user = document.getElementById("user").value;
   var password = document.getElementById("password").value;
   var rpassword = document.getElementById("passwordR").value;
+  var acceso = document.getElementById("accesoI").value;
+  debugger
   if (nombre == null || user == null || password == null || rpassword == null){
     alert("Por favor inserte todos los datos solicitados");
   }else{
     if (password === rpassword) {
-      var usuario1 = new Chambas.User(nombre, user, password, "SuperAdmin");
+      var usuario1 = new Chambas.User(nombre, user, password, acceso);
       if(JSON.parse(localStorage.getItem("usuarios")) == null){
         var usuarios = [];
       }else{
@@ -76,13 +78,14 @@ MostrarUsuario: function(){
    var cell1 = row.insertCell(0);
    var cell2 = row.insertCell(1);
    var cell3 = row.insertCell(2);
+   var cell4 = row.insertCell(3);
    cell1.innerHTML = usuarios[i].name;
    cell2.innerHTML = usuarios[i].user;
+   cell3.innerHTML = usuarios[i].acceso;
     // crea un elemento "a" que va a ser el q encapsule a la imagen
     var link = document.createElement("A");
-    link.setAttribute("href", "editarfacturas.html");
     link.setAttribute("onClick", "Chambas.editar()");
-
+    link.setAttribute("id", id);
   // crea el elemento imagen
   var x = document.createElement("i");
   x.setAttribute("class","fa fa-pencil");
@@ -100,8 +103,8 @@ MostrarUsuario: function(){
     // se lo agrega al elemento link que creo antes
     link2.appendChild(x2);
     // agrega el elmento al body o a quién sea donde se va a agregar, podria ser un div
-    cell3.appendChild(document.body.appendChild(link));
-    cell3.appendChild(document.body.appendChild(link2));
+    cell4.appendChild(document.body.appendChild(link));
+    cell4.appendChild(document.body.appendChild(link2));
     id++;
   }
 },
@@ -116,24 +119,53 @@ eliminar: function (obj){
         usuarios.splice(i, 1);
         var us = JSON.stringify(usuarios);
         localStorage.setItem("usuarios", us);
-        document.getElementById("tblTablaUsuario").deleteRow(1);
+        jQuery("#tblTablaUsuario").find("tr:gt(0)").remove();
         Chambas.MostrarUsuario();
       } 
     }
   },
-modificar: function(){
-  var i;
-  usuarios = JSON.parse(localStorage.getItem("usuarios"));
-  for (i in usuarios)
-    if (i == obj.id){
-        document.setElementById("nameU").value= usuarios[i].name;
-        document.setElementById("user").value = usuarios[i].user;
-        document.getElementById("password").value = usuarios[i].password;
-        
-        var us = JSON.stringify(usuarios);
-        localStorage.setItem("usuarios", us);
-        document.getElementById("tblTablaUsuario").deleteRow(1);
-        Chambas.MostrarUsuario();
-    }
-}
-};
+/*  modificar: function(obj){
+    var z;
+    var t = obj.id;
+    usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    debugger
+    for (z in usuarios)
+      if (z == t){
+        usuariom = usuarios[z];
+        var ust = JSON.stringify(usuariom);
+        localStorage.setItem("modificar", ust);
+        location.href = "editarusuario.html";
+      }
+
+    },
+    agregardatos: function(){
+    debugger
+    usuariom = JSON.parse(localStorage.getItem("modificar"));
+    var p;
+    for (p in usuariom) {
+      var y = usuariom[p];
+      if(p=="name"){
+        $(nameU).val(y);
+      }
+      if (p=="user") {
+        $(user).val(y);
+      }
+      if (p=="password") {
+        $(password).val(y);
+        $(passwordR).val(y);
+      }
+      if (p=="acceso") {
+        $(accesoI).val(y);
+      };
+    };
+    },
+    guardarCambios: function(){
+      usuariom.name = document.getElementById("nameU").value; 
+      usuariom.user = document.getElementById("user").value;
+      usuariom.password = document.getElementById("password").value;
+      usuariom.acceso = document.getElementById("acceso").value; 
+      var us = JSON.stringify(usuariom);
+      localStorage.setItem("usuarios", us);
+      Chambas.MostrarUsuario();
+    },*/
+  };

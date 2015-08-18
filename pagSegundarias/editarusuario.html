@@ -14,7 +14,7 @@
 		<div class="encabezado">
 			<h1>User</h1>
 		</div>
-			<div class="contenedor">
+		<div class="contenedor">
 			<div id="Home">
 				<a href="../dashboard.html"><i class="fa fa-home"></i><label>  Home</label></a>
 			</div>
@@ -54,9 +54,13 @@
 		<br>
 		<input id="accesoI" list="acceso" placeholder="Acceso">
 		<datalist id="acceso"><option value="SuperAdmin"/><option value="Usuario"/></datalist>
-			<a href="clientes.html">Cancel</a> 
-		 	<button onClick="Chambas.ObtenerDatosUsuraio()">Save</button>
+		<a href="clientes.html">Cancel</a> 
+		<button onClick="Chambas.guardarCambios()">Save</button>
 	</form>
 	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+	<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	window.onload = Chambas.agregardatos();
+	</script>
 </body>
 </html>
