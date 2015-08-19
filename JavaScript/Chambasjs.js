@@ -38,18 +38,33 @@ var Chambas= Chambas ||{
    if (user == 'admin' && password == '$uper4dmin') {
     console.log(user, password);
     /*document.getElementById('login').action ="dashboard.html"*/
+    usuarioActual = new Chambas.User("admin", "User", "$uper4dmin","SuperAdmin");
+    localStorage.removeItem("usuarioActual");
+    var d = JSON.stringify(usuarioActual);
+    localStorage.setItem("usuarioActual", d);
     location.href = "dashboard.html";
     incorrect = true;
   }
   for (i in usuarios) {
-      if (usuarios[i].user == user && usuarios[i].password == password) {
+    if (usuarios[i].user == user && usuarios[i].password == password) {
       location.href = "dashboard.html";
+      localStorage.removeItem("usuarioActual");
       usuarioActual = usuarios[i];
-      
+      var d = JSON.stringify(usuarioActual);
+      localStorage.setItem("usuarioActual", d);
       incorrect = true;
-  };
+    };
   };
   if (incorrect == false){ alert("Usuario o contraseña incorrect, por favor intentelo de nuevo");};
+},
+UsuarioLabel: function(){
+  debugger
+  usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
+  document.getElementById("UserLogin").innerHTML = usuarioActual.user;
+  document.getElementById("UserLogin1").innerHTML = usuarioActual.user;
+  if (usuarioActual.acceso == "SuperAdmin") {
+    document.getElementById('Usuariosdiv').style.display = 'block';
+  };
 },
 /*----------------------------------------------------Usuarios-----------------------------------------------------*/
 ObtenerDatosUsuraio: function(){
@@ -136,6 +151,30 @@ eliminarUsuario: function (obj){
         Chambas.MostrarUsuario();
       } 
     }
+  },
+  CargarSelectU: function(){
+      usuarios = JSON.parse(localStorage.getItem("usuarios"));
+      var data = document.getElementById("selectusuario");
+      for (var i=0;i<usuarios.length;i++) {
+        data.options[i] = new Option(usuarios[i].name,'valor :'+i);
+
+      };
+    /*document.getElementById("select2").options[document.getElementById("select2").options.length]=new Option(arrayValores[i][2], arrayValores[i][1]);*/
+  },
+  editarU: function(){
+    debugger
+    var data = document.getElementById("selectusuario");
+    var obj = data.selectedIndex;
+    var i;
+    usuarios = JSON.parse(localStorage.getItem("usuarios"));
+    for (i in usuarios)
+      if (i == obj){
+        modif = usuarios[i];
+        var tr = JSON.stringify(modif);
+        localStorage.setItem("modif", tr);
+        localStorage.setItem("ubicacion", obj.id);
+        location.href="editarusuario.html";
+      }
   },
   editarUsuario: function(obj){
     debugger;
@@ -259,6 +298,31 @@ eliminarClientes: function (obj){
       } 
     }
   },
+  CargarSelectCl: function(){
+      debugger
+      clientes = JSON.parse(localStorage.getItem("clientes"));
+      var data = document.getElementById("selectclientes");
+      for (var i=0;i<=usuarios.length;i++) {
+        data.options[i] = new Option(clientes[i].name,'valor :'+i);
+
+      };
+    /*document.getElementById("select2").options[document.getElementById("select2").options.length]=new Option(arrayValores[i][2], arrayValores[i][1]);*/
+  },
+  editarC: function(){
+    debugger
+    var data = document.getElementById("selectclientes");
+    var obj = data.selectedIndex;
+    var i;
+    clientes = JSON.parse(localStorage.getItem("clientes"));
+    for (i in clientes)
+      if (i == obj){
+        modif = clientes[i];
+        var tr = JSON.stringify(modif);
+        localStorage.setItem("modif", tr);
+        localStorage.setItem("ubicacion", obj.id);
+        location.href="editarclientes.html";
+      }
+  },
   editarClientes: function(obj){
     var i;
     clientes = JSON.parse(localStorage.getItem("clientes"));
@@ -295,53 +359,53 @@ eliminarClientes: function (obj){
         location.href = "clientes.html";
       };
     },
-  /*---------------------Trabajos---------------------------------------------------------------------------*/
-  CargarDatalist: function(){
-    clientes = JSON.parse(localStorage.getItem("clientes"));
-    var data = document.getElementById("clientedatalist");
-    for (i in clientes) {
-      var x = document.createElement("option");
-      x.setAttribute("value", clientes[i].name);
-      data.appendChild(x);
-    };
-  },
-  ObtenerDatosTrabajas: function(){
-    debugger
-    var Client1 = $("input[id=clientesI]").val();
-    var descripcion = document.getElementById("descripcion").value;
-    var date = document.getElementById("fecha").value;
-    var notes = document.getElementById("notas").value;
-    if (Client1 == null || descripcion == null || date == null || notes == null){
-      alert("Por favor inserte todos los datos solicitados");
-    }else{
-      var trabajo1 = new Chambas.Trabajo(Client1, descripcion, date, notes);
-      if(JSON.parse(localStorage.getItem("trabajo")) == null){
-        var Trabajos = [];
+    /*---------------------Trabajos---------------------------------------------------------------------------*/
+    CargarDatalist: function(){
+      clientes = JSON.parse(localStorage.getItem("clientes"));
+      var data = document.getElementById("clientedatalist");
+      for (i in clientes) {
+        var x = document.createElement("option");
+        x.setAttribute("value", clientes[i].name);
+        data.appendChild(x);
+      };
+    },
+    ObtenerDatosTrabajas: function(){
+      debugger
+      var Client1 = $("input[id=clientesI]").val();
+      var descripcion = document.getElementById("descripcion").value;
+      var date = document.getElementById("fecha").value;
+      var notes = document.getElementById("notas").value;
+      if (Client1 == null || descripcion == null || date == null || notes == null){
+        alert("Por favor inserte todos los datos solicitados");
       }else{
-        Trabajos = JSON.parse(localStorage.getItem("trabajo"));
-      }
-      Trabajos.push(trabajo1);
-      var tb = JSON.stringify(Trabajos);
-      location.href = "chamba.html";
-      localStorage.setItem("trabajo", tb);
-    };
-  },
-  MostrarTrabajo: function(){ 
-    trabajo = JSON.parse(localStorage.getItem("trabajo"));
-    var table = document.getElementById("tblTablaTrabajos");
-    var i;
-    var id = 0;
-    for (i in trabajo) {
-     var row = table.insertRow(1);
-     var cell1 = row.insertCell(0);
-     var cell2 = row.insertCell(1);
-     var cell3 = row.insertCell(2);
-     var cell4 = row.insertCell(3);
-     var cell5 = row.insertCell(4);
-     cell1.innerHTML = trabajo[i].Client;
-     cell2.innerHTML = trabajo[i].descripcion;
-     cell3.innerHTML = trabajo[i].date;
-     cell4.innerHTML = trabajo[i].notes;
+        var trabajo1 = new Chambas.Trabajo(Client1, descripcion, date, notes);
+        if(JSON.parse(localStorage.getItem("trabajo")) == null){
+          var Trabajos = [];
+        }else{
+          Trabajos = JSON.parse(localStorage.getItem("trabajo"));
+        }
+        Trabajos.push(trabajo1);
+        var tb = JSON.stringify(Trabajos);
+        location.href = "chamba.html";
+        localStorage.setItem("trabajo", tb);
+      };
+    },
+    MostrarTrabajo: function(){ 
+      trabajo = JSON.parse(localStorage.getItem("trabajo"));
+      var table = document.getElementById("tblTablaTrabajos");
+      var i;
+      var id = 0;
+      for (i in trabajo) {
+       var row = table.insertRow(1);
+       var cell1 = row.insertCell(0);
+       var cell2 = row.insertCell(1);
+       var cell3 = row.insertCell(2);
+       var cell4 = row.insertCell(3);
+       var cell5 = row.insertCell(4);
+       cell1.innerHTML = trabajo[i].Client;
+       cell2.innerHTML = trabajo[i].descripcion;
+       cell3.innerHTML = trabajo[i].date;
+       cell4.innerHTML = trabajo[i].notes;
     // crea un elemento "a" que va a ser el q encapsule a la imagen
     var link = document.createElement("A");
     link.setAttribute("onClick", "Chambas.editarTrabajo(this)");
@@ -382,6 +446,31 @@ eliminarTrabajos: function (obj){
         Chambas.MostrarTrabajo();
       } 
     }
+  },
+  CargarSelectCh: function(){
+      debugger
+      Trabajos = JSON.parse(localStorage.getItem("trabajo"));
+      var data = document.getElementById("selectchambas");
+      for (var i=0;i<Trabajos.length;i++) {
+        data.options[i] = new Option(Trabajos[i].descripcion,'valor :'+i);
+
+      };
+    /*document.getElementById("select2").options[document.getElementById("select2").options.length]=new Option(arrayValores[i][2], arrayValores[i][1]);*/
+  },
+  editarCh: function(){
+    debugger
+    var data = document.getElementById("selectchambas");
+    var obj = data.selectedIndex;
+    var i;
+    Trabajos = JSON.parse(localStorage.getItem("trabajo"));
+    for (i in Trabajos)
+      if (i == obj){
+        modif = Trabajos[i];
+        var tr = JSON.stringify(modif);
+        localStorage.setItem("modif", tr);
+        localStorage.setItem("ubicacion", obj.id);
+        location.href="editarchamba.html";
+      }
   },
   editarTrabajo: function(obj){
     var i;
@@ -498,6 +587,30 @@ eliminarfacturas: function (obj){
         Chambas.MostrarFactura();
       } 
     }
+  },
+  CargarSelectF: function(){
+      Facturas = JSON.parse(localStorage.getItem("factura"));
+      var data = document.getElementById("selectfacturas");
+      for (var i=0;i<Facturas.length;i++) {
+        data.options[i] = new Option(Facturas[i].descripcion,'valor :'+i);
+
+      };
+    /*document.getElementById("select2").options[document.getElementById("select2").options.length]=new Option(arrayValores[i][2], arrayValores[i][1]);*/
+  },
+  editarf: function(){
+    debugger
+    var data = document.getElementById("selectfacturas");
+    var obj = data.selectedIndex;
+    var i;
+    Facturas = JSON.parse(localStorage.getItem("factura"));
+    for (i in Facturas)
+      if (i == obj){
+        modif = Facturas[i];
+        var tr = JSON.stringify(modif);
+        localStorage.setItem("modif", tr);
+        localStorage.setItem("ubicacion", obj.id);
+        location.href="editarfacturas.html";
+      }
   },
   editarFactura: function(obj){
     var i;

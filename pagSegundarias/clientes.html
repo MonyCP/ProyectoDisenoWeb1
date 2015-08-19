@@ -18,7 +18,7 @@
 			<div class="contenedor">
 				<div class="four.columns">
 					<div id="Home">
-						<a href=""><i class="fa fa-home"></i><label>  Home</label></a>
+						<a href="../dashboard.html"><i class="fa fa-home"></i><label>  Home</label></a>
 					</div>
 				</div>
 				<div class="four.columns">
@@ -49,10 +49,9 @@
 	<div class="row">
 		<div class="contenedorselect">
 			<div class="four.columns">
-				<select>
-					<option>Clientes</option>
+				<select id="selectclientes">
 				</select>
-				<input type=button value="Seleccionar"> 
+				<input type=button onClick="Chambas.editarC()" value="Seleccionar"> 
 			</div>
 		</div>
 	</div>
@@ -77,6 +76,7 @@
 <script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 window.onload = Chambas.MostrarClientes();
+window.onload = Chambas.CargarSelectCl();
 </script>
 </body>
 </html>

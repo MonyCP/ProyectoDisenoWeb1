@@ -68,6 +68,9 @@ div #Home a{
     bottom:5px;
     left:10px; 
 }
+#Usuariosdiv{
+  display: none;
+}
 .myutton {
   background-color:#A34500;
   border-radius:6px;
