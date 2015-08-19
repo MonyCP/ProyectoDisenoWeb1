@@ -34,24 +34,23 @@
 		<div class="button"><a href="crearchamba.html"><button>New Chamba</button></a></div>
 	</div>
 	<div class="contenedortabla">
-		<table border="0" cellpadding="0" cellspacing="0" class="tabla">
-			<th>Cliente</th><th>Chamba</th><th>Fecha</th><th>Notas</th><th>Action</th>
-			<tr>
-				<td>Felipe Mora</td>
-				<td>Pintar casa por fuera</td>
-				<td>14/07/2014</td>
-				<td>Presentarse 2 días antes</td>
-				<td><a href="editarchamba.html"><i class="fa fa-pencil"></i></a><a href="eliminarchamba.html"><i class="fa fa-trash"></i></a></td>
-			</tr>		
-			<tr>
-				<td>Alejandro Portuguez</td>
-				<td>Poda y arrglo de jardín</td>
-				<td>25/08/2014</td>
-				<td>llamar antes de la fecha</td>
-				<td><a href="editarchamba.html"><i class="fa fa-pencil"></i></a><a href="eliminarchamba.html"><i class="fa fa-trash"></i></a></td>
-			</tr>	
+		<table border="0" cellpadding="0" cellspacing="0" class="tabla" id="tblTablaTrabajos">
+				<thead>
+					<th>Cliente</th>
+					<th>Chamba</th>
+					<th>Fecha</th>
+					<th>Notas</th>
+					<th>Action</th>
+				</thead>
+				<tbody>
+				</tbody>
 		</table>
 	</div>
+	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+window.onload = Chambas.MostrarTrabajo();
+</script>
 </body>
 </html>
 <!--http://localhost/xampp/index.php>

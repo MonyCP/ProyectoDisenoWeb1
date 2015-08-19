@@ -34,30 +34,31 @@
 		<div class="lugar"><i class="fa fa-folder-open-o"></i><label>Chambas</label></div>
 		<div class="button"><a href="#"><button>New Chamba</button></a></div>
 	</div>
-	<form action="chambaNuevo.html">
-		ID<br>
-		<select>
-			<option value="#">Cliente</option>
-			<option value="Felipe Mora">Felipe Mora</option>
-			<option value="Alejandro Portuguez">Alejandro Portuguez</option>
-			<option value="Juanito Alcachofa">Juanito Alcachofa</option>
-		</select>
+	<form >
+		Cliente<br>
+		<input id="clientesI" list="clientedatalist" placeholder="Cliente">
+		<datalist id="clientedatalist"></datalist>
 		<br>
 		<br>
 		Descripcion:<br>
-		<textarea rows="4" cols="50" placeholder="Descripcion del empleo"></textarea>
+		<textarea id="descripcion"rows="4" cols="50" placeholder="Descripcion del empleo"></textarea>
 		<br>
 		<br>
 		Fecha<br>
-		<input type="date" name="fecha">
+		<input id="fecha" type="date" name="fecha">
 		<br>
 		<br>
 		Notas<br>
-		<input class="inputF" type="text" name="Notas" placeholder="Notas">
+		<input id="notas" class="inputF" type="text" name="Notas" placeholder="Notas">
 		<br>
 		<br>
 		<a href="chamba.html">Cancel</a> 
-		<button>Save</button>
+		<button onClick="Chambas.ObtenerDatosTrabajas()">Save</button>
 	</form>
+	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+	<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	window.onload = Chambas.CargarDatalist();
+	</script>
 </body>
 </html>

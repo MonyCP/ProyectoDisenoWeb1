@@ -1,5 +1,6 @@
 var usuarios= [];
-var clients= new Array();
+var modif = [];
+var clientes= new Array();
 var Facturas= new Array();
 var Trabajos= new Array();
 var Chambas= Chambas ||{
@@ -9,9 +10,9 @@ var Chambas= Chambas ||{
     this.password = password;
     this.acceso = acceso;
   },
-  Client: function(name,id, phone ){
+  Client: function(idx,name, phone ){
+    this.idx = idx;
     this.name = name;
-    this.id = id;
     this.phone = phone;
   },
   Factura: function(Client, descripcion, date, monto){
@@ -24,8 +25,9 @@ var Chambas= Chambas ||{
    this.Client = Client;
    this.descripcion = descripcion;
    this.date = date;
-   this.notes;
+   this.notes = notes;
  },
+ /*-------------------------------------------------------Login---------------------------------------------------*/
  Login: function (){
    var user = document.getElementById('UserName').value;
    var password = document.getElementById('Password').value;
@@ -39,6 +41,7 @@ var Chambas= Chambas ||{
     alert("usuario incorrecto, Vuelva a intentar");
   };
 },
+/*----------------------------------------------------Usuarios-----------------------------------------------------*/
 ObtenerDatosUsuraio: function(){
   console.log("Hola1;")
   var nombre = document.getElementById("nameU").value;
@@ -84,7 +87,7 @@ MostrarUsuario: function(){
    cell3.innerHTML = usuarios[i].acceso;
     // crea un elemento "a" que va a ser el q encapsule a la imagen
     var link = document.createElement("A");
-    link.setAttribute("onClick", "Chambas.editar()");
+    link.setAttribute("onClick", "Chambas.editarUsuario()");
     link.setAttribute("id", id);
   // crea el elemento imagen
   var x = document.createElement("i");
@@ -94,7 +97,7 @@ MostrarUsuario: function(){
     link.appendChild(x);
     var link2 = document.createElement("A");
     /*link2.setAttribute("href", "eliminarfacturas.html");*/
-    link2.setAttribute("onClick", "Chambas.eliminar(this)");
+    link2.setAttribute("onClick", "Chambas.eliminarUsuario(this)");
     link2.setAttribute("id", id);
 
   // crea el elemento imagen
@@ -108,7 +111,7 @@ MostrarUsuario: function(){
     id++;
   }
 },
-eliminar: function (obj){
+eliminarUsuario: function (obj){
   debugger;
   var i;
   usuarios = JSON.parse(localStorage.getItem("usuarios"));
@@ -124,48 +127,263 @@ eliminar: function (obj){
       } 
     }
   },
-/*  modificar: function(obj){
-    var z;
-    var t = obj.id;
-    usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  /*--------------------------------------------Clientes-----------------------------------------------------------------*/
+  ObtenerDatosClientes: function(){
     debugger
-    for (z in usuarios)
-      if (z == t){
-        usuariom = usuarios[z];
-        var ust = JSON.stringify(usuariom);
-        localStorage.setItem("modificar", ust);
-        location.href = "editarusuario.html";
+  var idx = document.getElementById("idx").value;
+  var nombre = document.getElementById("name").value;
+  var tel = document.getElementById("tel").value;
+  debugger
+  if (idx == null || nombre == null || tel == null){
+    alert("Por favor inserte todos los datos solicitados");
+  }else{
+      var cliente1 = new Chambas.Client(idx, nombre, tel);
+      if(JSON.parse(localStorage.getItem("clientes")) == null){
+        var clientes = [];
+      }else{
+        clientes = JSON.parse(localStorage.getItem("clientes"));
       }
+      clientes.push(cliente1);
+      var cl = JSON.stringify(clientes);
+      location.href = "cliente.html";
+      localStorage.setItem("clientes", cl);
+  };
+},
+MostrarClientes: function(){ 
+  clientes = JSON.parse(localStorage.getItem("clientes"));
+  var table = document.getElementById("tblTablaClientes");
+  var i;
+  var id = 0;
+  for (i in clientes) {
+   var row = table.insertRow(1);
+   var cell1 = row.insertCell(0);
+   var cell2 = row.insertCell(1);
+   var cell3 = row.insertCell(2);
+   var cell4 = row.insertCell(3);
+   cell1.innerHTML = clientes[i].idx;
+   cell2.innerHTML = clientes[i].name;
+   cell3.innerHTML = clientes[i].phone;
+    // crea un elemento "a" que va a ser el q encapsule a la imagen
+    var link = document.createElement("A");
+    link.setAttribute("onClick", "Chambas.editarClientes()");
+    link.setAttribute("id", id);
+  // crea el elemento imagen
+  var x = document.createElement("i");
+  x.setAttribute("class","fa fa-pencil");
 
-    },
-    agregardatos: function(){
-    debugger
-    usuariom = JSON.parse(localStorage.getItem("modificar"));
-    var p;
-    for (p in usuariom) {
-      var y = usuariom[p];
-      if(p=="name"){
-        $(nameU).val(y);
-      }
-      if (p=="user") {
-        $(user).val(y);
-      }
-      if (p=="password") {
-        $(password).val(y);
-        $(passwordR).val(y);
-      }
-      if (p=="acceso") {
-        $(accesoI).val(y);
-      };
+    // se lo agrega al elemento link que creo antes
+    link.appendChild(x);
+    var link2 = document.createElement("A");
+    /*link2.setAttribute("href", "eliminarfacturas.html");*/
+    link2.setAttribute("onClick", "Chambas.eliminarClientes(this)");
+    link2.setAttribute("id", id);
+
+  // crea el elemento imagen
+  var x2 = document.createElement("i");
+  x2.setAttribute("class","fa fa-trash");
+    // se lo agrega al elemento link que creo antes
+    link2.appendChild(x2);
+    // agrega el elmento al body o a quién sea donde se va a agregar, podria ser un div
+    cell4.appendChild(document.body.appendChild(link));
+    cell4.appendChild(document.body.appendChild(link2));
+    id++;
+  }
+},
+eliminarClientes: function (obj){
+  debugger;
+  var i;
+  clientes= JSON.parse(localStorage.getItem("clientes"));
+  for (i in clientes)
+    if (i == obj.id){
+      var r = confirm("Esta seguro de que desea eliminar "+ clientes[i].name+"?");
+      if (r == true) {
+        clientes.splice(i, 1);
+        var cl = JSON.stringify(clientes);
+        localStorage.setItem("clientes", cl);
+        jQuery("#tblTablaClientes").find("tr:gt(0)").remove();
+        Chambas.MostrarUsuario();
+      } 
+    }
+  },
+  /*---------------------Trabajos---------------------------------------------------------------------------*/
+  CargarDatalist: function(){
+    clientes = JSON.parse(localStorage.getItem("clientes"));
+    var data = document.getElementById("clientedatalist");
+    for (i in clientes) {
+      var x = document.createElement("option");
+      x.setAttribute("value", clientes[i].name);
+      data.appendChild(x);
     };
-    },
-    guardarCambios: function(){
-      usuariom.name = document.getElementById("nameU").value; 
-      usuariom.user = document.getElementById("user").value;
-      usuariom.password = document.getElementById("password").value;
-      usuariom.acceso = document.getElementById("acceso").value; 
-      var us = JSON.stringify(usuariom);
-      localStorage.setItem("usuarios", us);
-      Chambas.MostrarUsuario();
-    },*/
+    
+  },
+  ObtenerDatosTrabajas: function(){
+    debugger
+  var Client1 = $("input[id=clientesI]").val();
+  var descripcion = document.getElementById("descripcion").value;
+  var date = document.getElementById("fecha").value;
+  var notes = document.getElementById("notas").value;
+  if (Client1 == null || descripcion == null || date == null || notes == null){
+    alert("Por favor inserte todos los datos solicitados");
+  }else{
+      var trabajo1 = new Chambas.Trabajo(Client1, descripcion, date, notes);
+      if(JSON.parse(localStorage.getItem("trabajo")) == null){
+        var Trabajos = [];
+      }else{
+        Trabajos = JSON.parse(localStorage.getItem("trabajo"));
+      }
+      Trabajos.push(trabajo1);
+      var tb = JSON.stringify(Trabajos);
+      location.href = "chamba.html";
+      localStorage.setItem("trabajo", tb);
+  };
+},
+MostrarTrabajo: function(){ 
+  trabajo = JSON.parse(localStorage.getItem("trabajo"));
+  var table = document.getElementById("tblTablaTrabajos");
+  var i;
+  var id = 0;
+  for (i in trabajo) {
+   var row = table.insertRow(1);
+   var cell1 = row.insertCell(0);
+   var cell2 = row.insertCell(1);
+   var cell3 = row.insertCell(2);
+   var cell4 = row.insertCell(3);
+   var cell5 = row.insertCell(4);
+   cell1.innerHTML = trabajo[i].Client;
+   cell2.innerHTML = trabajo[i].descripcion;
+   cell3.innerHTML = trabajo[i].date;
+   cell4.innerHTML = trabajo[i].notes;
+    // crea un elemento "a" que va a ser el q encapsule a la imagen
+    var link = document.createElement("A");
+    link.setAttribute("onClick", "Chambas.editarTrabajo()");
+    link.setAttribute("id", id);
+  // crea el elemento imagen
+  var x = document.createElement("i");
+  x.setAttribute("class","fa fa-pencil");
+
+    // se lo agrega al elemento link que creo antes
+    link.appendChild(x);
+    var link2 = document.createElement("A");
+    /*link2.setAttribute("href", "eliminarfacturas.html");*/
+    link2.setAttribute("onClick", "Chambas.eliminarTrabajos(this)");
+    link2.setAttribute("id", id);
+
+  // crea el elemento imagen
+  var x2 = document.createElement("i");
+  x2.setAttribute("class","fa fa-trash");
+    // se lo agrega al elemento link que creo antes
+    link2.appendChild(x2);
+    // agrega el elmento al body o a quién sea donde se va a agregar, podria ser un div
+    cell5.appendChild(document.body.appendChild(link));
+    cell5.appendChild(document.body.appendChild(link2));
+    id++;
+  }
+},
+eliminarTrabajos: function (obj){
+  debugger;
+  var i;
+  Trabajos= JSON.parse(localStorage.getItem("trabajo"));
+  for (i in Trabajos)
+    if (i == obj.id){
+      var r = confirm("Esta seguro de que desea eliminar "+ Trabajos[i].Client+"?");
+      if (r == true) {
+        Trabajos.splice(i, 1);
+        var cl = JSON.stringify(Trabajos);
+        localStorage.setItem("trabajo", cl);
+        jQuery("#tblTablaTrabajos").find("tr:gt(0)").remove();
+        Chambas.MostrarTrabajo();
+      } 
+    }
+  },
+  /*------------------------------Facturas----------------------------------------------------------------------------------*/
+    CargarDatalist: function(){
+    clientes = JSON.parse(localStorage.getItem("clientes"));
+    var data = document.getElementById("clientedatalist");
+    for (i in clientes) {
+      var x = document.createElement("option");
+      x.setAttribute("value", clientes[i].name);
+      data.appendChild(x);
+    };
+    
+  },
+  ObtenerDatosFacturas: function(){
+    debugger
+  var Client1 = $("input[id=clientesI]").val();
+  var descripcion = document.getElementById("descripcion").value;
+  var date = document.getElementById("fecha").value;
+  var monto = document.getElementById("monto").value;
+  if (Client1 == null || descripcion == null || date == null || monto == null){
+    alert("Por favor inserte todos los datos solicitados");
+  }else{
+      var factura1 = new Chambas.Factura(Client1, descripcion, date, monto);
+      if(JSON.parse(localStorage.getItem("factura")) == null){
+        var Facturas = [];
+      }else{
+        Facturas = JSON.parse(localStorage.getItem("factura"));
+      }
+      Facturas.push(factura1);
+      var tb = JSON.stringify(Facturas);
+      location.href = "facturas.html";
+      localStorage.setItem("factura", tb);
+  };
+},
+MostrarFactura: function(){ 
+  factura = JSON.parse(localStorage.getItem("factura"));
+  var table = document.getElementById("tblTablaFacturas");
+  var i;
+  var id = 0;
+  for (i in factura) {
+   var row = table.insertRow(1);
+   var cell1 = row.insertCell(0);
+   var cell2 = row.insertCell(1);
+   var cell3 = row.insertCell(2);
+   var cell4 = row.insertCell(3);
+   var cell5 = row.insertCell(4);
+   debugger
+   cell1.innerHTML = factura[i].Client;
+   cell2.innerHTML = factura[i].descripcion;
+   cell3.innerHTML = factura[i].date;
+   cell4.innerHTML = factura[i].monto;
+    // crea un elemento "a" que va a ser el q encapsule a la imagen
+    var link = document.createElement("A");
+    link.setAttribute("onClick", "Chambas.editarFactura()");
+    link.setAttribute("id", id);
+  // crea el elemento imagen
+  var x = document.createElement("i");
+  x.setAttribute("class","fa fa-pencil");
+
+    // se lo agrega al elemento link que creo antes
+    link.appendChild(x);
+    var link2 = document.createElement("A");
+    /*link2.setAttribute("href", "eliminarfacturas.html");*/
+    link2.setAttribute("onClick", "Chambas.eliminarfacturas(this)");
+    link2.setAttribute("id", id);
+
+  // crea el elemento imagen
+  var x2 = document.createElement("i");
+  x2.setAttribute("class","fa fa-trash");
+    // se lo agrega al elemento link que creo antes
+    link2.appendChild(x2);
+    // agrega el elmento al body o a quién sea donde se va a agregar, podria ser un div
+    cell5.appendChild(document.body.appendChild(link));
+    cell5.appendChild(document.body.appendChild(link2));
+    id++;
+  }
+},
+eliminarfacturas: function (obj){
+  debugger;
+  var i;
+  Facturas= JSON.parse(localStorage.getItem("factura"));
+  for (i in Trabajos)
+    if (i == obj.id){
+      var r = confirm("Esta seguro de que desea eliminar "+ Facturas[i].Client+"?");
+      if (r == true) {
+        Facturas.splice(i, 1);
+        var cl = JSON.stringify(Facturas);
+        localStorage.setItem("factura", cl);
+        jQuery("#tblTablaFacturas").find("tr:gt(0)").remove();
+        Chambas.MostrarFactura();
+      } 
+    }
+  },
   };
