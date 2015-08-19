@@ -34,29 +34,32 @@
 		<div class="lugar"><i class="fa fa-pencil-square-o"></i><label>Invoices</label></div>
 		<div class="button"><a href="crearfacturas.html"><button>New Invoices</button></a></div>
 	</div>
-	<form action="facturasNuevo.html">
-		ID<br>
-		<select>
-			<option value="Felipe Mora">Felipe Mora</option>
-			<option value="Alejandro Portuguez">Alejandro Portuguez</option>
-			<option value="Juanito Alcachofa">Juanito Alcachofa</option>
-		</select>
+	<form>
+		Cliente<br>
+		<input id="clientesI" list="clientedatalist" placeholder="Cliente">
+		<datalist id="clientedatalist"></datalist>
 		<br>
 		<br>
 		Descripcion:<br>
-		<textarea rows="4" cols="50">Pintar casa por fuera</textarea>
+		<textarea id= "descripcion" rows="4" cols="50" placeholder="Descripcion del empleo"></textarea>
 		<br>
 		<br>
 		Fecha<br>
-		 <input type="date" name="fecha" value="2014-08-25">
-		 <br>
-		 <br>
+		<input id="fecha" type="date" name="fecha">
+		<br>
+		<br>
 		Monto<br>
-		<input class="inputF" type="text" name="Notas" value="20.000" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<input id="monto" class="inputF" type="text" name="Notas" placeholder="Monto del pago" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 		<br>
 		<br>
 		<a href="facturas.html">Cancel</a> 
-		<button>Save</button>
+		<button onClick="Chambas.GuardarCambiosFactura()">Save</button>
 	</form>
+	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+	<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	window.onload = Chambas.CargarDatalist();
+	window.onload = Chambas.CargarInputsFactura();
+	</script>
 </body>
 </html>

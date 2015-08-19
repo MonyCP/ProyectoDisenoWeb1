@@ -36,19 +36,24 @@
 	</div>
 	<form >
 		ID<br>
-		<input class="inputF" type="text" name="id" value="2-230-098" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<input class="inputF" type="text" id = "idx" name="id" placeholder="ID" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 		<br>
 		<br>
 		Full Name:<br>
-		<input class="inputF" type="text" name="name" placeholder="Felipe Mora" value="Felipe Mora">
+		<input class="inputF" type="text" id = "name" name="name" placeholder="Full Name" onKeypress="if (event.keyCode >45 && event.keyCode  <57) event.returnValue = false;" >
 		<br>
 		<br>
 		Phone Number<br>
-		<input class="inputF" type="text" name="tel" value="85-566-678"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+		<input class="inputF" type="phone" id = "phone" name="tel" placeholder="Phone Number"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 		<br>
 		<br>
 			<a href="cliente.html">Cancel</a> 
-		 	<button><a href="clientes.html">Save</a></button>
+		 	<button onClick="Chambas.GuardarCambiosClientes()">Save</button>
 	</form>
+	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
+	<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript">
+	window.onload = Chambas.CargarInputsClientes();
+	</script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-	<title>Client</title>
+	<title>Usuario</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../css/stylegeneral.css">
 	<link rel="stylesheet" type="text/css" href="../css/styletablas.css">
@@ -55,12 +55,12 @@
 		<input id="accesoI" list="acceso" placeholder="Acceso">
 		<datalist id="acceso"><option value="SuperAdmin"/><option value="Usuario"/></datalist>
 		<a href="clientes.html">Cancel</a> 
-		<button onClick="Chambas.guardarCambios()">Save</button>
+		<button onClick="Chambas.GuardarCambiosUsuario()">Save</button>
 	</form>
 	<script type="text/javascript" src="../JavaScript/Chambasjs.js"></script>
 	<script type="text/javascript" src="../JavaScript/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript">
-	window.onload = Chambas.agregardatos();
+	window.onload = Chambas.CargarInputsUsuario();
 	</script>
 </body>
 </html>

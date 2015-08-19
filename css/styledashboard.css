@@ -28,6 +28,9 @@
 
 /*iPhone 5 (320x568)*/
 @media(min-width: 320px){
+	#usuariosAdmin{
+		display: none;
+	}
 	.contenedorimagenes{
 		margin-left: 20%;
 		margin-top: 20%;

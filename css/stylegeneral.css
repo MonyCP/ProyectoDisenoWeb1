@@ -63,8 +63,50 @@ div #Home a{
 .menu ul li a:hover{
   color: #442F20;
 }
-/*iPhone 5 (320x568)*/
+.botonUsuario{
+   position:absolute;
+    bottom:5px;
+    left:10px; 
+}
+.myutton {
+  background-color:#A34500;
+  border-radius:6px;
+  border:1px solid #A34500;
+  display:inline-block;
+  cursor:pointer;
+  font-family:Arial;
+  font-size:19px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+}
+.myutton a{
+  text-decoration: none;
+   color:#FBDDEE;
+}
+.myutton:hover {
+  background-color:#FBDDEE;
+  color:#A34500;
+}
+.myutton:active {
+  position:relative;
+  top:1px;
+}
+/*iPhone 5 (320x568)----------------------------------------------*/
 @media( min-width: 320px){
+.botonUsuario{
+  width: 35%;
+  height: 20%;
+  top: 90%;
+  bottom:0px;
+}
+  .myutton{
+  width: 75%;
+  height: 40%;
+  }
+  .myutton a{
+    font-size: 50px;
+  }
   div.encabezado{
     height: 70px;
 }
@@ -116,8 +158,13 @@ h1{
     margin-left: 18%;
   }
 }
-/*Apple iPad (1024x768)*/
+/*Apple iPad (1024x768)----------------------------------------*/
 @media(min-width:1024px){
+  .myutton{
+  width: 70%;
+  height: 50%;
+  bottom: 10px;
+  }
  div.encabezado{
   height: 30px;
 }
@@ -171,6 +218,18 @@ h1{
     width: auto;
     margin-left: auto;
     margin-top: 5%;
+  }
+}
+@media (min-width: 1336px){
+  .botonUsuario{
+  width: 30%;
+  height: 20%;
+  top: 90%;
+  bottom: 5px;
+}
+  .myutton{
+  width: 70%;
+  height: 50%;
   }
 }
 
